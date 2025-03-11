@@ -6,14 +6,54 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
+    @IBOutlet weak var statusLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        EmailTextField.text = ""
+        PasswordTextField.text = ""
+        statusLabel.isHidden = false
+        statusLabel.text = "Label"
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func SignInButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "segueToSignUp", sender: self)
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        // Making sure none of the fields are empty
+        guard let email = EmailTextField.text, !email.isEmpty,
+              let password = PasswordTextField.text, !password.isEmpty else {
+            statusLabel.text = "Please enter email and password."
+            return
+        }
+        
+        // Checking if User is Registered
+        Auth.auth().signIn(withEmail: EmailTextField.text!, password: PasswordTextField.text!) {
+            (authResult, error) in
+            if let error = error as NSError? {
+                self.statusLabel.text = "\(error.localizedDescription)"
+            } else {
+                self.statusLabel.text = ""
+                // runs the segue on the main thread
+                //DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "segueToHomeScreen", sender: sender)
+                    
+                    // NEED TO FIX: MAKING SURE USER CAN ONLY LOGIN WITH CREDIBLE AUTH OTHERWISE THROW ERROR IN
+                    // STATUS BAR, DOUBLE SEGUE ISSUE,
+                //}
 
-
+            }
+        }
+    }
 }
 

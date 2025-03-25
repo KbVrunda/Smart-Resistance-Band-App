@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD2176152D76879600B8FD34 /* homeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2176142D76879600B8FD34 /* homeScreenVC.swift */; };
+		ADC171EB2D8F6BF500F86FBF /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC171EA2D8F6BF500F86FBF /* ChartViewController.swift */; };
 		ADEEC0AD2D47F91E00DFD376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0AC2D47F91E00DFD376 /* AppDelegate.swift */; };
 		ADEEC0AF2D47F91E00DFD376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0AE2D47F91E00DFD376 /* SceneDelegate.swift */; };
 		ADEEC0B12D47F91E00DFD376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0B02D47F91E00DFD376 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		AD2176142D76879600B8FD34 /* homeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeScreenVC.swift; sourceTree = "<group>"; };
+		ADC171EA2D8F6BF500F86FBF /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		ADEEC0A92D47F91E00DFD376 /* BME261L.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BME261L.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEEC0AC2D47F91E00DFD376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADEEC0AE2D47F91E00DFD376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				ADEEC0AE2D47F91E00DFD376 /* SceneDelegate.swift */,
 				ADEEC0B02D47F91E00DFD376 /* ViewController.swift */,
 				ADEEC0B22D47F91E00DFD376 /* Main.storyboard */,
+				ADC171EA2D8F6BF500F86FBF /* ChartViewController.swift */,
 				AD2176142D76879600B8FD34 /* homeScreenVC.swift */,
 				ADEEC0ED2D4843F200DFD376 /* SignUpViewController.swift */,
 				ADEEC0B52D47F92000DFD376 /* Assets.xcassets */,
@@ -299,6 +302,7 @@
 				ADEEC0EE2D4843F200DFD376 /* SignUpViewController.swift in Sources */,
 				AD2176152D76879600B8FD34 /* homeScreenVC.swift in Sources */,
 				ADEEC0AF2D47F91E00DFD376 /* SceneDelegate.swift in Sources */,
+				ADC171EB2D8F6BF500F86FBF /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

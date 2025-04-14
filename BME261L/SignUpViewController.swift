@@ -17,11 +17,14 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Default values for text fields
         signUpEmailField.text = " "
         signUpPasswordField.text = " "
         confirmPassword.text = " "
         statusLabel.text = " "
-
+        
+        setGradientBackground()
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +55,19 @@ class SignUpViewController: UIViewController {
                 self.statusLabel.text = "Success! Return to Login Screen."
             }
         }
+    }
+    
+    // Making sure Background is cute.
+    func setGradientBackground() {
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [
+            UIColor(red: 173/255, green: 216/255, blue: 230/255, alpha: 1).cgColor, // Baby Blue
+            UIColor(red: 230/255, green: 230/255, blue: 250/255, alpha: 1).cgColor  // Lavender
+        ]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        view.layer.insertSublayer(gradient, at: 0)
     }
     
     /*

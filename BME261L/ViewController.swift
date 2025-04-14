@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Creating default values for the text fields
         EmailTextField.text = ""
         PasswordTextField.text = ""
         statusLabel.isHidden = false
@@ -24,7 +26,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    // Segue to Sign In screen if the sign up button is pressed
     @IBAction func SignInButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "segueToSignUp", sender: self)
     }
@@ -48,15 +50,12 @@ class ViewController: UIViewController {
                 // runs the segue on the main thread
                 //DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "segueToHomeScreen", sender: sender)
-                    
-                    // NEED TO FIX: MAKING SURE USER CAN ONLY LOGIN WITH CREDIBLE AUTH OTHERWISE THROW ERROR IN
-                    // STATUS BAR, DOUBLE SEGUE ISSUE,
-                //}
 
             }
         }
     }
     
+    // Adding a cute background
     func setGradientBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD2176152D76879600B8FD34 /* homeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2176142D76879600B8FD34 /* homeScreenVC.swift */; };
+		AD67D0952D9B6510001B1822 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD67D0942D9B6510001B1822 /* GoogleService-Info.plist */; };
 		ADC171EB2D8F6BF500F86FBF /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC171EA2D8F6BF500F86FBF /* ChartViewController.swift */; };
 		ADEEC0AD2D47F91E00DFD376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0AC2D47F91E00DFD376 /* AppDelegate.swift */; };
 		ADEEC0AF2D47F91E00DFD376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0AE2D47F91E00DFD376 /* SceneDelegate.swift */; };
@@ -26,7 +27,6 @@
 		ADEEC0EA2D48414A00DFD376 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = ADEEC0E92D48414A00DFD376 /* FirebaseMLModelDownloader */; };
 		ADEEC0EC2D48414A00DFD376 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ADEEC0EB2D48414A00DFD376 /* FirebaseMessaging */; };
 		ADEEC0EE2D4843F200DFD376 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEEC0ED2D4843F200DFD376 /* SignUpViewController.swift */; };
-		ADEEC0F02D4846DF00DFD376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEEC0EF2D4846DF00DFD376 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		AD2176142D76879600B8FD34 /* homeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeScreenVC.swift; sourceTree = "<group>"; };
+		AD67D0942D9B6510001B1822 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ADC171EA2D8F6BF500F86FBF /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		ADEEC0A92D47F91E00DFD376 /* BME261L.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BME261L.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADEEC0AC2D47F91E00DFD376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		ADEEC0CD2D47F92000DFD376 /* BME261LUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BME261LUITests.swift; sourceTree = "<group>"; };
 		ADEEC0CF2D47F92000DFD376 /* BME261LUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BME261LUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ADEEC0ED2D4843F200DFD376 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		ADEEC0EF2D4846DF00DFD376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 		ADEEC0A02D47F91E00DFD376 = {
 			isa = PBXGroup;
 			children = (
-				ADEEC0EF2D4846DF00DFD376 /* GoogleService-Info.plist */,
+				AD67D0942D9B6510001B1822 /* GoogleService-Info.plist */,
 				ADEEC0AB2D47F91E00DFD376 /* BME261L */,
 				ADEEC0C22D47F92000DFD376 /* BME261LTests */,
 				ADEEC0CC2D47F92000DFD376 /* BME261LUITests */,
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADEEC0B62D47F92000DFD376 /* Assets.xcassets in Resources */,
-				ADEEC0F02D4846DF00DFD376 /* GoogleService-Info.plist in Resources */,
+				AD67D0952D9B6510001B1822 /* GoogleService-Info.plist in Resources */,
 				ADEEC0B92D47F92000DFD376 /* Base in Resources */,
 				ADEEC0B42D47F91E00DFD376 /* Base in Resources */,
 			);

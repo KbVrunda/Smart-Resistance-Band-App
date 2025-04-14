@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class homeScreenVC: UIViewController {
     
@@ -15,17 +16,26 @@ class homeScreenVC: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var forceLabel: UILabel!
     
+    // Timer simulates incoming force and time data
+    var timer: Timer?
+    var elapsedTime: Int = 0  // Track full seconds
+    var fakeTime: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timeLabel.text = "-"
+        forceLabel.text = "-"
+        
+        // Aesthetics for the Time UI
         timeView.layer.cornerRadius = 20
         timeView.layer.shadowColor = UIColor.black.cgColor  // Shadow color
         timeView.layer.shadowOpacity = 0.8                // Shadow opacity (0 to 1)
         timeView.layer.shadowOffset = CGSize(width: 0, height: 2) // Shadow direction and distance
         timeView.layer.shadowRadius = 4                    // Shadow blur radius
         timeView.layer.masksToBounds = false               // Important: allows shadow to extend beyond bounds
-
+        
+        // Aesthetics for the Force UI
         forceView.layer.cornerRadius = 20
         forceView.layer.shadowColor = UIColor.black.cgColor  // Shadow color
         forceView.layer.shadowOpacity = 0.8                 // Shadow opacity (0 to 1)
@@ -35,10 +45,11 @@ class homeScreenVC: UIViewController {
 
         
         setGradientBackground()
+        startFakeData()
 
-        // Do any additional setup after loading the view.
     }
     
+    // Making a Cute Background
     func setGradientBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -51,18 +62,19 @@ class homeScreenVC: UIViewController {
         view.layer.insertSublayer(gradient, at: 0)
     }
     
-    // NEED TO UNDERSTAND DATA UPLAOD, HOW DOES BLUETOOTH GET IT TO ME
-    // FORMAT IT ALL NICE AND PRETTY 
+    // MARK: - FAKE DATA
     
+    // For the purpose of the Code Review, ignore this. This was just a way to set up testing data until the hardware is ready.
+    func startFakeData() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            let fakeForce = Float.random(in: 0...100)
+            self.elapsedTime += 1  // Add 1 second every tick
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            DispatchQueue.main.async {
+                self.forceLabel.text = String(format: "%.2f", fakeForce)
+                self.timeLabel.text = "\(self.elapsedTime)"
+            }
+        }
     }
-    */
 
 }

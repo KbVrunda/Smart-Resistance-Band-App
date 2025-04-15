@@ -21,6 +21,9 @@ class homeScreenVC: UIViewController {
     var elapsedTime: Int = 0  // Track full seconds
     var fakeTime: Float = 0.0
     
+    // Websocket for the Arduino to Python to Swift stuff
+    var webSocketTask: URLSessionWebSocketTask?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +48,8 @@ class homeScreenVC: UIViewController {
 
         
         setGradientBackground()
-        startFakeData()
+        //startFakeData()
+        connectWebSocket()
 
     }
     
@@ -76,5 +80,40 @@ class homeScreenVC: UIViewController {
             }
         }
     }
+    
+    // MARK: - Python to WebSocket to Swift code
+    func connectWebSocket() {
+        guard let url = URL(string: "ws://localhost:8765") else { return }
+        let session = URLSession(configuration: .default)
+        webSocketTask = session.webSocketTask(with: url)
+        webSocketTask?.resume()
+        receiveData()
+    }
+
+    func receiveData() {
+        webSocketTask?.receive { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print("WebSocket error: \(error)")
+            case .success(let message):
+                switch message {
+                case .string(let text):
+                    DispatchQueue.main.async {
+                        self?.forceLabel.text = text
+                        self?.elapsedTime += 1
+                        self?.timeLabel.text = "\(self?.elapsedTime ?? 0)"
+                    }
+                default:
+                    break
+                }
+            }
+            self?.receiveData() // Keep listening
+        }
+    }
+
+    deinit {
+        webSocketTask?.cancel(with: .goingAway, reason: nil)
+    }
+
 
 }
